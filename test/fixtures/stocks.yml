@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_code: MyString
+  market: 1
+  stock_name: MyString
+  stock_open_date: 2016-01-19 12:32:04
+
+two:
+  stock_code: MyString
+  market: 1
+  stock_name: MyString
+  stock_open_date: 2016-01-19 12:32:04

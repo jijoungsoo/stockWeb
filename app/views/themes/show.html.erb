@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @theme.theme_code %>
+</p>
+
+<p>
+  <strong>Theme name:</strong>
+  <%= @theme.theme_name %>
+</p>
+
+
+<div class="stocks_list">
+   <%= render "stocks/list", part_object: @theme  %>
+</div>
+
+
+
+
+
+
+
+<%= link_to 'Back', themes_path %>

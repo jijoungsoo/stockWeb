@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Market:</strong>
+  <%= @market.market_code %>
+</p>
+
+<p>
+  <strong>Market name:</strong>
+  <%= @market.market_name %>
+</p>
+
+
+<div class="stocks_list">
+   <%= render "stocks/list",part_object: @market  %>
+</div>
+
+<%= link_to 'Back', markets_path %>

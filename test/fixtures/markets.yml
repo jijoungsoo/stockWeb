@@ -1,0 +1,30 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  market_code: 0 
+  market_name: 장내
+
+two:
+  market_code: 3
+  market_name: ELW
+three:
+  market_code: 4
+  market_name: 뮤추얼펀드
+four:
+  market_code: 5
+  market_name: 신주인수권
+five:
+  market_code: 6
+  market_name: 리츠1
+six:
+  market_code: 7
+  market_name: 리츠2
+seven:
+  market_code: 8
+  market_name: 하이일펀드
+eight:
+  market_code: 10
+  market_name: 코스닥
+nine:
+  market_code: 30
+  market_name: 제3시장
+
