@@ -4,16 +4,17 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get 'welcome/index'
-
+  get 'welcome/left'
 
   wash_out :receive
 
 
   resources :markets, only: [:show,:index,:new,:create] 
-
-
   resources :stocks, only: [:show,:index,:new,:create]
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :opt10081s, only: [:show,:index,:new,:create]
+  resources :branch_code_names, only: [:show,:index,:new,:create]
+
+ # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

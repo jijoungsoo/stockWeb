@@ -53,3 +53,9 @@ group :development do
   gem 'spring'
 end
 
+
+#paging을 위해 라이브러리 kaminari 추가
+gem 'kaminari'
+#bootstrap도 넣자 미관을 위해
+#gem 'bootstrap-sass-rails'
+gem 'bootstrap-sass'

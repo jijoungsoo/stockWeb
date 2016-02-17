@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Branch Code Names</h1>
+
+<%= link_to 'New Branch code name', new_branch_code_name_path %>
+
+<table class="table  table-bordered">
+  <thead>
+    <tr>
+      <th>Branch code</th>
+      <th>Branch name</th>
+      <th>보기</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @branch_code_names.each do |branch_code_name| %>
+      <tr class="<%= cycle('', 'info') %>">
+        <td><%= branch_code_name.branch_code %></td>
+        <td><%= branch_code_name.branch_name %></td>
+        <td><%= link_to 'Show', branch_code_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

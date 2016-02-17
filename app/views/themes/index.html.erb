@@ -2,16 +2,20 @@
 
 <h1>Listing Theme</h1>
 
-<table>
+<%= link_to 'New Theme', new_theme_path %>
+
+<table  class="table  table-bordered">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Theme code</th>
+      <th>Theme name</th>
+      <th>보기</th>
     </tr>
   </thead>
 
   <tbody>
     <% @themes.each do |theme| %>
-      <tr>
+      <tr class="<%= cycle('active', 'warning') %>">
         <td><%= theme.theme_code %></td>
         <td><%= theme.theme_name %></td>
 
@@ -24,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Theme', new_theme_path %>

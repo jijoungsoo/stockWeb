@@ -6,7 +6,9 @@ class KiwoomApi
                       log_level: :debug,
                       pretty_print_xml: true,
                       env_namespace: :s,
-                      strip_namespaces: false
+                      strip_namespaces: false,
+                      open_timeout:1800,
+                      read_timeout:1800
                       ) 
 	end
 
@@ -93,6 +95,49 @@ class KiwoomApi
 #		puts themes
 		return themes
 	  end
+
+	def get_opt10081(strCode,startDate,endDate)
+                message = { "tns:strCode" =>strCode, "tns:startDate"=>startDate ,"tns:endDate"=>endDate }
+                response = @client_soap.call(:get_opt10081,message:message)
+#               puts response
+#               puts response.body 
+#               puts response.body[:get_opt10081_response]
+#               puts response.body[:get_opt10081_response][:get_opt10081_result]
+                ret=response.body[:get_opt10081_response][:get_opt10081_result]
+                return ret
+
+	end
+
+
+
+	def get_branch_code_name()
+		#[46] 설명 회원사 코드와 이름을 반환합니다.
+		#반환값 회원사코드|회원사명;회원사코드|회원사명;…
+		#비고 Ex) openApi.GetBranchCodeName();
+		response = @client_soap.call(:get_branch_code_name)
+		#puts response
+		#puts response.body 
+		#puts response.body[:get_branch_code_name_response]
+		branchCodeNames= response.body[:get_branch_code_name_response][:get_branch_code_name_result]
+		h = {}
+		branchCodeNames.split(";").map do |s|
+		    k,v=s.split('|')
+		    h[k] ||= []
+		    h[k].push(v)
+		end
+		return h
+	#	puts h
+	#	h.each do |key, value|
+	#	    puts key
+	#	    puts value
+	#	end
+	end
+	
+
+
 end
+
+
+
 
 

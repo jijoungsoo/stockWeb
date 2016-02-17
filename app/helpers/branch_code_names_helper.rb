@@ -1,0 +1,2 @@
+module BranchCodeNamesHelper
+end

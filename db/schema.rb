@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203120144) do
+ActiveRecord::Schema.define(version: 20160216154650) do
+
+  create_table "branch_code_names", id: false, force: :cascade do |t|
+    t.string   "branch_code", limit: 3
+    t.string   "branch_name", limit: 30
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "branch_code_names", ["branch_code"], name: "index_branch_code_names_on_branch_code", unique: true, using: :btree
 
   create_table "market_stocks", id: false, force: :cascade do |t|
     t.string   "market_code_id", limit: 2
@@ -29,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160203120144) do
 
   add_index "markets", ["market_code"], name: "index_markets_on_market_code", unique: true, using: :btree
 
-  create_table "opt10081s", force: :cascade do |t|
+  create_table "opt10081s", id: false, force: :cascade do |t|
     t.datetime "stock_date"
     t.string   "stock_code",     limit: 9
     t.integer  "current_price",  limit: 4
@@ -41,6 +50,8 @@ ActiveRecord::Schema.define(version: 20160203120144) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  add_index "opt10081s", ["stock_date", "stock_code"], name: "index_opt10081s_on_stock_date_and_stock_code", unique: true, using: :btree
 
   create_table "qpw00004s", id: false, force: :cascade do |t|
     t.datetime "stock_date"

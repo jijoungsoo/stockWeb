@@ -1,0 +1,20 @@
+<h1>New Stock Daily</h1>
+
+Soap을 사용해서 모든 주식의 처음 생성일부터 지금까지의   일일정보를 얻어온다.
+
+<%= form_tag(opt10081s_path,:method=>:post)  do %>
+
+시작 날짜
+<%= text_field_tag "startDate", Time.now.strftime('%Y%m%d'), :placeholder => 'Enter search term...' %>
+(시작날짜는 ONE,TWO 또는 ,YYYYMMDD 라고 표시한다) <br />
+종료 날짜
+<%= text_field_tag "endDate", Time.now.strftime('%Y%m%d'), :placeholder => 'Enter search term...' %>
+(종료날짜는 YYYYMMDD 라고 표시한다.)<br />
+
+<%= submit_tag "Save", data: { confirm: "Are you sure?" } %>
+<%  end %>
+
+
+<%= link_to 'Add DB', opt10081s_path,{:method=>:post    } %>
+
+<%= link_to 'Back', opt10081s_path %>

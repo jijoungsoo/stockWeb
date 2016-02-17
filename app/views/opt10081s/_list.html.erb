@@ -1,23 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Stocks</h1>
-
-
-<%= link_to 'New Stock', new_stock_path %>
-
-<table class="table  table-bordered">
+<table>
   <thead>
     <tr>
       <th>Stock code</th>
       <th>Stock name</th>
       <th>Stock open date</th>
-      <th>보기</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @stocks.each do |stock| %>
-      <tr class="<%= cycle('', 'danger') %>">
+    <% part_object.stocks.each do |stock| %>
+      <tr>
         <td><%= stock.stock_code %></td>
         <td><%= stock.stock_name %></td>
         <td><%= stock.stock_open_date %></td>
@@ -27,5 +19,4 @@
   </tbody>
 </table>
 
-<br>
 

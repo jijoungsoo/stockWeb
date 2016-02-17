@@ -2,7 +2,9 @@
 
 <h1>Listing Markets</h1>
 
-<table>
+<%= link_to 'New Market', new_market_path %>
+
+<table class="table  table-bordered">
   <thead>
     <tr>
       <th>Market</th>
@@ -13,7 +15,7 @@
 
   <tbody>
     <% @markets.each do |market| %>
-      <tr>
+      <tr class="<%= cycle('active', 'info') %>">
         <td><%= market.market_code %></td>
         <td><%= market.market_name %></td>
         <td><%= link_to 'Show', market %></td>
@@ -24,4 +26,3 @@
 
 <br>
 
-<%= link_to 'New Market', new_market_path %>

@@ -5,6 +5,7 @@ class ThemesController < ApplicationController
   # GET /themes.json
   def index
     @themes = Theme.all
+#    @themes = Theme.limit(5).offset(30)
   end
 
   # GET /themes/1

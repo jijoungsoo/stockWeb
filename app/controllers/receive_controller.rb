@@ -24,21 +24,21 @@ class ReceiveController < ApplicationController
                h.push(h1)
           end
      end
- puts h 
-
+# puts h 
+#=begin
      h.each do |stock|
           Opt10081.create(
              :stock_date=>stock['stock_date'],
              :stock_code=>stock['stock_code'],
              :current_price=>stock['current_price'],
              :trade_quantity=>stock['trade_quantity'],
-             :trade_price=>stock['trade_quantity'],
+             :trade_price=>stock['trade_price'],
              :start_price=>stock['start_price'],
              :high_price=>stock['high_price'],
              :low_price=>stock['low_price']
           )
      end
-
+#=end
 
 
      render :soap =>"test"

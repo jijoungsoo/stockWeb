@@ -1,6 +1,6 @@
-class CreateOpt10081s < ActiveRecord::Migration
+ class CreateOpt10081s < ActiveRecord::Migration
   def change
-    create_table :opt10081s do |t|
+    create_table :opt10081s ,id: false  do |t|
       t.timestamp :stock_date #일자
       t.string :stock_code, limit:9 #종목코드
       t.integer :current_price    #현재가(종가라고 볼수있음)
@@ -11,5 +11,7 @@ class CreateOpt10081s < ActiveRecord::Migration
       t.integer :low_price        #저가
       t.timestamps null: false
     end
+    add_index :opt10081s, [:stock_date, :stock_code] , unique: true
+
   end
 end
