@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contract_time: 2016-03-02 21:50:46
+  account_number: MyString
+  stock_code: MyString
+  possession_quantity: 1
+  purchase_price: 1
+  total_amount_of_purchase: 1
+  order_possible_quantity: 1
+  today_net_buy_quantity: 1
+  order_type: 1
+  today_sell_profit_and_loss: 1
+  deposit: 1
+  offered_price: 1
+  bid_price: 1
+  yesterday_current_price: 1
+  not_commission_profit_and_loss_rate: 9.99
+  stock_option_trade_unit: MyString
+
+two:
+  contract_time: 2016-03-02 21:50:46
+  account_number: MyString
+  stock_code: MyString
+  possession_quantity: 1
+  purchase_price: 1
+  total_amount_of_purchase: 1
+  order_possible_quantity: 1
+  today_net_buy_quantity: 1
+  order_type: 1
+  today_sell_profit_and_loss: 1
+  deposit: 1
+  offered_price: 1
+  bid_price: 1
+  yesterday_current_price: 1
+  not_commission_profit_and_loss_rate: 9.99
+  stock_option_trade_unit: MyString

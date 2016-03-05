@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_date: 2016-03-03 15:05:01
+  stock_code: MyString
+  offered_price: 1
+  bid_price: 1
+
+two:
+  stock_date: 2016-03-03 15:05:01
+  stock_code: MyString
+  offered_price: 1
+  bid_price: 1

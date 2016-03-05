@@ -1,0 +1,438 @@
+<%
+	def printColor(value)
+		ret=''
+			if (value<0)
+				ret='text-primary'
+			elsif (value>0)
+				ret='text-danger'
+			end
+		return ret
+  end
+
+	def printColor2(value)
+		ret=''
+			if (value>=4)
+				ret='text-primary'
+			elsif (value>0)
+				ret='text-danger'
+			end
+		return ret
+  end
+%>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opt10059s (금액은 백만원 단위)</h1>
+
+<label>
+sql: <%=@opt10059s.to_sql %>
+</label>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+ <th rowspan="2">일자</th>
+ <th rowspan="2">종목이름</th>
+ <th rowspan="2">종목코드</th>
+ <th rowspan="2">현재가</th>
+<!--		 <th rowspan="2">대비기호</th> -->
+ <th rowspan="2"><%= sortable "contrast_yesterday" %>전일대비</th>
+ <th rowspan="2"><%= sortable "fluctuation_rate" %>등락율</th>
+ <th rowspan="2">누적거래대금</th>
+   <th colspan="13">순매수_금액</th>
+   <th colspan="13">순매수_수량</th>
+   <th colspan="13">매수_금액</th>
+   <th colspan="13">매수_수량</th>
+   <th colspan="13">매도_금액</th>
+   <th colspan="13">매도_수량</th>
+    </tr>
+    <tr>
+<!-- -->
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+		</tr>
+  </thead>
+  <tbody>
+    <% @opt10059s.each do |rs| %>
+    <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= rs.stock_date.strftime("%Y-%m-%d") %></td>
+        <td class="text-right"><%= get_stock_name(rs.stock_code) %></td>
+        <td class="text-right"><%= rs.stock_code %></td>
+        <td class="text-right <%=printColor2(rs.contrast_symbol) %>"><%= nwd(rs.current_price) %></td>
+<!--        <td class="text-right"><%= nwd(rs.contrast_symbol) %></td> -->
+        <td class="text-right <%=printColor2(rs.contrast_symbol) %>"><%= nwd(rs.contrast_yesterday) %></td>
+        <td class="text-right <%=printColor2(rs.contrast_symbol) %>"><%= nwd(rs.fluctuation_rate) %></td>
+        <td class="text-right"><%= nwd(rs.accumulated_trade_price) %></td>
+
+        <td class="text-right <%=printColor(rs.net_buy_price_domestic_investor) %>"><%= nwd(rs.net_buy_price_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_foreign_investor) %>"><%= nwd(rs.net_buy_price_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_institution) %>"><%= nwd(rs.net_buy_price_institution) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_financial_investment) %>"><%= nwd(rs.net_buy_price_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_insurance) %>"><%= nwd(rs.net_buy_price_insurance) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_investment_trust) %>"><%= nwd(rs.net_buy_price_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_etc_financial) %>"><%= nwd(rs.net_buy_price_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_bank) %>"><%= nwd(rs.net_buy_price_bank) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_pension_fund) %>"><%= nwd(rs.net_buy_price_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_private_equity_fund) %>"><%= nwd(rs.net_buy_price_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_nation) %>"><%= nwd(rs.net_buy_price_nation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_etc_corporation) %>"><%= nwd(rs.net_buy_price_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_foregin_investment_in_korea) %>"><%= nwd(rs.net_buy_price_foregin_investment_in_korea) %></td>
+
+        <td class="text-right <%=printColor(rs.net_buy_amount_domestic_investor) %>"><%= nwd(rs.net_buy_amount_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_foreign_investor) %>"><%= nwd(rs.net_buy_amount_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_institution) %>"><%= nwd(rs.net_buy_amount_institution) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_financial_investment) %>"><%= nwd(rs.net_buy_amount_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_insurance) %>"><%= nwd(rs.net_buy_amount_insurance) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_investment_trust) %>"><%= nwd(rs.net_buy_amount_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_etc_financial) %>"><%= nwd(rs.net_buy_amount_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_bank) %>"><%= nwd(rs.net_buy_amount_bank) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_pension_fund) %>"><%= nwd(rs.net_buy_amount_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_private_equity_fund) %>"><%= nwd(rs.net_buy_amount_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_nation) %>"><%= nwd(rs.net_buy_amount_nation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_etc_corporation) %>"><%= nwd(rs.net_buy_amount_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_foregin_investment_in_korea) %>"><%= nwd(rs.net_buy_amount_foregin_investment_in_korea) %></td>
+
+        <td class="text-right <%=printColor(rs.buy_price_domestic_investor) %>"><%= nwd(rs.buy_price_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_foreign_investor) %>"><%= nwd(rs.buy_price_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_institution) %>"><%= nwd(rs.buy_price_institution) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_financial_investment) %>"><%= nwd(rs.buy_price_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_insurance) %>"><%= nwd(rs.buy_price_insurance) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_investment_trust) %>"><%= nwd(rs.buy_price_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_etc_financial) %>"><%= nwd(rs.buy_price_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_bank) %>"><%= nwd(rs.buy_price_bank) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_pension_fund) %>"><%= nwd(rs.buy_price_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_private_equity_fund) %>"><%= nwd(rs.buy_price_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_nation) %>"><%= nwd(rs.buy_price_nation) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_etc_corporation) %>"><%= nwd(rs.buy_price_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_foregin_investment_in_korea) %>"><%= nwd(rs.buy_price_foregin_investment_in_korea) %></td>
+
+        <td class="text-right <%=printColor(rs.buy_amount_domestic_investor) %>"><%= nwd(rs.buy_amount_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_foreign_investor) %>"><%= nwd(rs.buy_amount_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_institution) %>"><%= nwd(rs.buy_amount_institution) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_financial_investment) %>"><%= nwd(rs.buy_amount_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_insurance) %>"><%= nwd(rs.buy_amount_insurance) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_investment_trust) %>"><%= nwd(rs.buy_amount_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_etc_financial) %>"><%= nwd(rs.buy_amount_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_bank) %>"><%= nwd(rs.buy_amount_bank) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_pension_fund) %>"><%= nwd(rs.buy_amount_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_private_equity_fund) %>"><%= nwd(rs.buy_amount_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_nation) %>"><%= nwd(rs.buy_amount_nation) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_etc_corporation) %>"><%= nwd(rs.buy_amount_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_foregin_investment_in_korea) %>"><%= nwd(rs.buy_amount_foregin_investment_in_korea) %></td>
+
+        <td class="text-right <%=printColor(rs.sell_price_domestic_investor) %>"><%= nwd(rs.sell_price_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_foreign_investor) %>"><%= nwd(rs.sell_price_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_institution) %>"><%= nwd(rs.sell_price_institution) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_financial_investment) %>"><%= nwd(rs.sell_price_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_insurance) %>"><%= nwd(rs.sell_price_insurance) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_investment_trust) %>"><%= nwd(rs.sell_price_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_etc_financial) %>"><%= nwd(rs.sell_price_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_bank) %>"><%= nwd(rs.sell_price_bank) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_pension_fund) %>"><%= nwd(rs.sell_price_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_private_equity_fund) %>"><%= nwd(rs.sell_price_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_nation) %>"><%= nwd(rs.sell_price_nation) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_etc_corporation) %>"><%= nwd(rs.sell_price_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_foregin_investment_in_korea) %>"><%= nwd(rs.sell_price_foregin_investment_in_korea) %></td>
+
+        <td class="text-right <%=printColor(rs.sell_amount_domestic_investor) %>"><%= nwd(rs.sell_amount_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_foreign_investor) %>"><%= nwd(rs.sell_amount_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_institution) %>"><%= nwd(rs.sell_amount_institution) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_financial_investment) %>"><%= nwd(rs.sell_amount_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_insurance) %>"><%= nwd(rs.sell_amount_insurance) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_investment_trust) %>"><%= nwd(rs.sell_amount_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_etc_financial) %>"><%= nwd(rs.sell_amount_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_bank) %>"><%= nwd(rs.sell_amount_bank) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_pension_fund) %>"><%= nwd(rs.sell_amount_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_private_equity_fund) %>"><%= nwd(rs.sell_amount_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_nation) %>"><%= nwd(rs.sell_amount_nation) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_etc_corporation) %>"><%= nwd(rs.sell_amount_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_foregin_investment_in_korea) %>"><%= nwd(rs.sell_amount_foregin_investment_in_korea) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @opt10059s %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+			 <th rowspan="2">일자</th>
+
+			 <th rowspan="2">종목이름</th>
+			 <th rowspan="2">종목코드</th>
+			 <th rowspan="2">현재가</th>
+<!--			 <th rowspan="2">대비기호</th> -->
+			 <th rowspan="2">전일대비</th>
+			 <th rowspan="2">등락율</th>
+			 <th rowspan="2">누적거래대금</th>
+      <th colspan="6">개인투자자</th>
+      <th colspan="6">외국인투자자</th>
+      <th colspan="6">기관계</th>
+      <th colspan="6">금융투자</th>
+      <th colspan="6">보험</th>
+      <th colspan="6">투신</th>
+      <th colspan="6">기타금융</th>
+      <th colspan="6">은행</th>
+      <th colspan="6">연기금등</th>
+      <th colspan="6">사모펀드</th>
+      <th colspan="6">국가</th>
+      <th colspan="6">기타법인</th>
+      <th colspan="6">내외국인</th>
+    </tr>
+    <tr>
+<!-- -->
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+      <th>순매수_금액</th>
+      <th>순매수_수량</th>
+      <th>매수_금액</th>
+      <th>매수_수량</th>
+      <th>매도_금액</th>
+      <th>매도_수량</th>
+		</tr>
+  </thead>
+  <tbody>
+    <% @opt10059s.each do |rs| %>
+    <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= rs.stock_date.strftime("%Y-%m-%d") %></td>
+        <td class="text-right"><%= get_stock_name(rs.stock_code) %></td>
+        <td class="text-right"><%= rs.stock_code %></td>
+        <td class="text-right <%=printColor2(rs.contrast_symbol) %>"><%= nwd(rs.current_price) %></td>
+<!--        <td class="text-right"><%= nwd(rs.contrast_symbol) %></td> -->
+        <td class="text-right <%=printColor2(rs.contrast_symbol) %>"><%= nwd(rs.contrast_yesterday) %></td>
+        <td class="text-right <%=printColor2(rs.contrast_symbol) %>"><%= nwd(rs.fluctuation_rate) %></td>
+        <td class="text-right"><%= nwd(rs.accumulated_trade_price) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_domestic_investor) %>"><%= nwd(rs.net_buy_price_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_domestic_investor) %>"><%= nwd(rs.net_buy_amount_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_domestic_investor) %>"><%= nwd(rs.buy_price_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_domestic_investor) %>"><%= nwd(rs.buy_amount_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_domestic_investor) %>"><%= nwd(rs.sell_price_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_domestic_investor) %>"><%= nwd(rs.sell_amount_domestic_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_foreign_investor) %>"><%= nwd(rs.net_buy_price_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_foreign_investor) %>"><%= nwd(rs.net_buy_amount_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_foreign_investor) %>"><%= nwd(rs.buy_price_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_foreign_investor) %>"><%= nwd(rs.buy_amount_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_foreign_investor) %>"><%= nwd(rs.sell_price_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_foreign_investor) %>"><%= nwd(rs.sell_amount_foreign_investor) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_institution) %>"><%= nwd(rs.net_buy_price_institution) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_institution) %>"><%= nwd(rs.net_buy_amount_institution) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_institution) %>"><%= nwd(rs.buy_price_institution) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_institution) %>"><%= nwd(rs.buy_amount_institution) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_institution) %>"><%= nwd(rs.sell_price_institution) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_institution) %>"><%= nwd(rs.sell_amount_institution) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_financial_investment) %>"><%= nwd(rs.net_buy_price_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_financial_investment) %>"><%= nwd(rs.net_buy_amount_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_financial_investment) %>"><%= nwd(rs.buy_price_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_financial_investment) %>"><%= nwd(rs.buy_amount_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_financial_investment) %>"><%= nwd(rs.sell_price_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_financial_investment) %>"><%= nwd(rs.sell_amount_financial_investment) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_insurance) %>"><%= nwd(rs.net_buy_price_insurance) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_insurance) %>"><%= nwd(rs.net_buy_amount_insurance) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_insurance) %>"><%= nwd(rs.buy_price_insurance) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_insurance) %>"><%= nwd(rs.buy_amount_insurance) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_insurance) %>"><%= nwd(rs.sell_price_insurance) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_insurance) %>"><%= nwd(rs.sell_amount_insurance) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_investment_trust) %>"><%= nwd(rs.net_buy_price_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_investment_trust) %>"><%= nwd(rs.net_buy_amount_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_investment_trust) %>"><%= nwd(rs.buy_price_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_investment_trust) %>"><%= nwd(rs.buy_amount_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_investment_trust) %>"><%= nwd(rs.sell_price_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_investment_trust) %>"><%= nwd(rs.sell_amount_investment_trust) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_etc_financial) %>"><%= nwd(rs.net_buy_price_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_etc_financial) %>"><%= nwd(rs.net_buy_amount_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_etc_financial) %>"><%= nwd(rs.buy_price_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_etc_financial) %>"><%= nwd(rs.buy_amount_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_etc_financial) %>"><%= nwd(rs.sell_price_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_etc_financial) %>"><%= nwd(rs.sell_amount_etc_financial) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_bank) %>"><%= nwd(rs.net_buy_price_bank) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_bank) %>"><%= nwd(rs.net_buy_amount_bank) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_bank) %>"><%= nwd(rs.buy_price_bank) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_bank) %>"><%= nwd(rs.buy_amount_bank) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_bank) %>"><%= nwd(rs.sell_price_bank) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_bank) %>"><%= nwd(rs.sell_amount_bank) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_pension_fund) %>"><%= nwd(rs.net_buy_price_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_pension_fund) %>"><%= nwd(rs.net_buy_amount_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_pension_fund) %>"><%= nwd(rs.buy_price_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_pension_fund) %>"><%= nwd(rs.buy_amount_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_pension_fund) %>"><%= nwd(rs.sell_price_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_pension_fund) %>"><%= nwd(rs.sell_amount_pension_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_private_equity_fund) %>"><%= nwd(rs.net_buy_price_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_private_equity_fund) %>"><%= nwd(rs.net_buy_amount_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_private_equity_fund) %>"><%= nwd(rs.buy_price_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_private_equity_fund) %>"><%= nwd(rs.buy_amount_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_private_equity_fund) %>"><%= nwd(rs.sell_price_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_private_equity_fund) %>"><%= nwd(rs.sell_amount_private_equity_fund) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_nation) %>"><%= nwd(rs.net_buy_price_nation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_nation) %>"><%= nwd(rs.net_buy_amount_nation) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_nation) %>"><%= nwd(rs.buy_price_nation) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_nation) %>"><%= nwd(rs.buy_amount_nation) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_nation) %>"><%= nwd(rs.sell_price_nation) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_nation) %>"><%= nwd(rs.sell_amount_nation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_etc_corporation) %>"><%= nwd(rs.net_buy_price_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_etc_corporation) %>"><%= nwd(rs.net_buy_amount_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_etc_corporation) %>"><%= nwd(rs.buy_price_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_etc_corporation) %>"><%= nwd(rs.buy_amount_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_etc_corporation) %>"><%= nwd(rs.sell_price_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_etc_corporation) %>"><%= nwd(rs.sell_amount_etc_corporation) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_price_foregin_investment_in_korea) %>"><%= nwd(rs.net_buy_price_foregin_investment_in_korea) %></td>
+        <td class="text-right <%=printColor(rs.net_buy_amount_foregin_investment_in_korea) %>"><%= nwd(rs.net_buy_amount_foregin_investment_in_korea) %></td>
+        <td class="text-right <%=printColor(rs.buy_price_foregin_investment_in_korea) %>"><%= nwd(rs.buy_price_foregin_investment_in_korea) %></td>
+        <td class="text-right <%=printColor(rs.buy_amount_foregin_investment_in_korea) %>"><%= nwd(rs.buy_amount_foregin_investment_in_korea) %></td>
+        <td class="text-right <%=printColor(rs.sell_price_foregin_investment_in_korea) %>"><%= nwd(rs.sell_price_foregin_investment_in_korea) %></td>
+        <td class="text-right <%=printColor(rs.sell_amount_foregin_investment_in_korea) %>"><%= nwd(rs.sell_amount_foregin_investment_in_korea) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

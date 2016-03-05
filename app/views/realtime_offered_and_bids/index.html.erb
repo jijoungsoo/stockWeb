@@ -1,0 +1,226 @@
+<p id="notice"><%= notice %></p>
+
+<h1>주식호가잔량</h1>
+(Listing Realtime Offered And Bids)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>일자</th>
+      <th>종목코드</th>
+      <th>매도호가1</th>
+      <th>매도호가수량1</th>
+      <th>매도호가직전대비1</th>
+      <th>매수호가1</th>
+      <th>매수호가수량1</th>
+      <th>매수호가직전대비1</th>
+      <th>매도호가2</th>
+      <th>매도호가수량2</th>
+      <th>매도호가직전대비2</th>
+      <th>매수호가2</th>
+      <th>매수호가수량2</th>
+      <th>매수호가직전대비2</th>
+      <th>매도호가3</th>
+      <th>매도호가수량3</th>
+      <th>매도호가직전대비3</th>
+      <th>매수호가3</th>
+      <th>매수호가수량3</th>
+      <th>매수호가직전대비3</th>
+      <th>매도호가4</th>
+      <th>매도호가수량4</th>
+      <th>매도호가직전대비4</th>
+      <th>매수호가4</th>
+      <th>매수호가수량4</th>
+      <th>매수호가직전대비4</th>
+      <th>매도호가5</th>
+      <th>매도호가수량5</th>
+      <th>매도호가직전대비5</th>
+      <th>매수호가5</th>
+      <th>매수호가수량5</th>
+      <th>매수호가직전대비5</th>
+      <th>매도호가6</th>
+      <th>매도호가수량6</th>
+      <th>매도호가직전대비6</th>
+      <th>매수호가6</th>
+      <th>매수호가수량6</th>
+      <th>매수호가직전대비6</th>
+      <th>매도호가7</th>
+      <th>매도호가수량7</th>
+      <th>매도호가직전대비7</th>
+      <th>매수호가7</th>
+      <th>매수호가수량7</th>
+      <th>매수호가직전대비7</th>
+      <th>매도호가8</th>
+      <th>매도호가수량8</th>
+      <th>매도호가직전대비8</th>
+      <th>매수호가8</th>
+      <th>매수호가수량8</th>
+      <th>매수호가직전대비8</th>
+      <th>매도호가9</th>
+      <th>매도호가수량9</th>
+      <th>매도호가직전대비9</th>
+      <th>매수호가9</th>
+      <th>매수호가수량9</th>
+      <th>매수호가직전대비9</th>
+      <th>매도호가10</th>
+      <th>매도호가수량10</th>
+      <th>매도호가직전대비10</th>
+      <th>매수호가10</th>
+      <th>매수호가수량10</th>
+      <th>매수호가직전대비10</th>
+      <th>매도호가총잔량</th>
+      <th>매도호가총잔량직전대비</th>
+      <th>매수호가총잔량</th>
+      <th>매수호가총잔량직전대비</th>
+      <th>예상체결가</th>
+      <th>예상체결수량</th>
+      <th>순매수잔량</th>
+      <th>매수비율</th>
+      <th>순매도잔량</th>
+      <th>매도비율</th>
+      <th>예상체결가전일종가대비</th>
+      <th>예상체결가전일종가대비등락율</th>
+      <th>예상체결가전일종가대비기호</th>
+      <th>예상체결가1</th>
+      <th>예상체결량1</th>
+      <th>예상체결가전일대비기호1</th>
+      <th>예상체결가전일대비1</th>
+      <th>예상체결가전일대비등락율1</th>
+      <th>Lp 매도호가수량1</th>
+      <th>Lp 매수호가수량1</th>
+      <th>Lp 매도호가수량2</th>
+      <th>Lp 매수호가수량2</th>
+      <th>Lp 매도호가수량3</th>
+      <th>Lp 매수호가수량3</th>
+      <th>Lp 매도호가수량4</th>
+      <th>Lp 매수호가수량4</th>
+      <th>Lp 매도호가수량5</th>
+      <th>Lp 매수호가수량5</th>
+      <th>Lp 매도호가수량6</th>
+      <th>Lp 매수호가수량6</th>
+      <th>Lp 매도호가수량7</th>
+      <th>Lp 매수호가수량7</th>
+      <th>Lp 매도호가수량8</th>
+      <th>Lp 매수호가수량8</th>
+      <th>Lp 매도호가수량9</th>
+      <th>Lp 매수호가수량9</th>
+      <th>Lp 매도호가수량10</th>
+      <th>Lp 매수호가수량10</th>
+      <th>누적거래량</th>
+      <th>전일거래량대비예상체결률</th>
+      <th>장운영구분</th>
+      <th>투자자별ticker</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @realtime_offered_and_bids.each do |realtime_offered_and_bid| %>
+      <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= realtime_offered_and_bid.stock_date %></td>
+        <td><%= realtime_offered_and_bid.stock_code %></td>
+        <td><%= realtime_offered_and_bid.offered_price1 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity1 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast1 %></td>
+        <td><%= realtime_offered_and_bid.bid_price1 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity1 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast1 %></td>
+        <td><%= realtime_offered_and_bid.offered_price2 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity2 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast2 %></td>
+        <td><%= realtime_offered_and_bid.bid_price2 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity2 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast2 %></td>
+        <td><%= realtime_offered_and_bid.offered_price3 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity3 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast3 %></td>
+        <td><%= realtime_offered_and_bid.bid_price3 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity3 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast3 %></td>
+        <td><%= realtime_offered_and_bid.offered_price4 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity4 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast4 %></td>
+        <td><%= realtime_offered_and_bid.bid_price4 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity4 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast4 %></td>
+        <td><%= realtime_offered_and_bid.offered_price5 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity5 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast5 %></td>
+        <td><%= realtime_offered_and_bid.bid_price5 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity5 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast5 %></td>
+        <td><%= realtime_offered_and_bid.offered_price6 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity6 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast6 %></td>
+        <td><%= realtime_offered_and_bid.bid_price6 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity6 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast6 %></td>
+        <td><%= realtime_offered_and_bid.offered_price7 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity7 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast7 %></td>
+        <td><%= realtime_offered_and_bid.bid_price7 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity7 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast7 %></td>
+        <td><%= realtime_offered_and_bid.offered_price8 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity8 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast8 %></td>
+        <td><%= realtime_offered_and_bid.bid_price8 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity8 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast8 %></td>
+        <td><%= realtime_offered_and_bid.offered_price9 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity9 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast9 %></td>
+        <td><%= realtime_offered_and_bid.bid_price9 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity9 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast9 %></td>
+        <td><%= realtime_offered_and_bid.offered_price10 %></td>
+        <td><%= realtime_offered_and_bid.offered_quantity10 %></td>
+        <td><%= realtime_offered_and_bid.offered_price_contrast10 %></td>
+        <td><%= realtime_offered_and_bid.bid_price10 %></td>
+        <td><%= realtime_offered_and_bid.bid_quantity10 %></td>
+        <td><%= realtime_offered_and_bid.bid_price_contrast10 %></td>
+        <td><%= realtime_offered_and_bid.offered_total_residual_quantity %></td>
+        <td><%= realtime_offered_and_bid.offered_total_residual_quantity_contrast %></td>
+        <td><%= realtime_offered_and_bid.bid_total_residual_quantity %></td>
+        <td><%= realtime_offered_and_bid.bid_total_residual_quantity_contrast %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_price %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_quantity %></td>
+        <td><%= realtime_offered_and_bid.net_buy_residual_quantity %></td>
+        <td><%= realtime_offered_and_bid.bid_rate %></td>
+        <td><%= realtime_offered_and_bid.net_sell_residual_quantity %></td>
+        <td><%= realtime_offered_and_bid.offered_rate %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_price %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_fluctuation_rate %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_symbol %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_price1 %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_quantity1 %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_symbol1 %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_price1 %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_fluctuation_rate1 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity1 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity1 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity2 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity2 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity3 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity3 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity4 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity4 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity5 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity5 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity6 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity6 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity7 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity7 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity8 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity8 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity9 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity9 %></td>
+        <td><%= realtime_offered_and_bid.lp_offered_quantity10 %></td>
+        <td><%= realtime_offered_and_bid.lp_bid_quantity10 %></td>
+        <td><%= realtime_offered_and_bid.accumulated_trade_quantity %></td>
+        <td><%= realtime_offered_and_bid.expectation_contract_yesterday_contrast_rate %></td>
+        <td><%= realtime_offered_and_bid.market_gubun %></td>
+        <td><%= realtime_offered_and_bid.investor_ticker %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

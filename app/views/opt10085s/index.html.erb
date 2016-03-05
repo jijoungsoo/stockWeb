@@ -1,0 +1,102 @@
+<%
+	def printColor(value)
+		ret=''
+			if (value<0)
+				ret='text-primary'
+			elsif (value>0)
+				ret='text-danger'
+			end
+		return ret
+  end
+
+	def printOrderStatusName(value)
+		ret=''
+			if (value==1)
+				ret='보유'
+			elsif (value==2)
+				ret='매도중'
+			elsif (value==3)
+				ret='매도완료'
+			end
+		return ret
+	end
+%>
+<p id="notice"><%= notice %></p>
+
+<h1>계좌수익률요청</h1>
+Listing Opt10085s
+<table class="table table-bordered">
+  <thead>
+    <tr>
+			<th>갱신시간</th>
+			<th>주문상태</th>
+      <th>구매일</th>
+      <th>계좌번호</th>
+      <th>종목코드</th>
+      <th>종목명</th>
+      <th>현재가</th>
+      <th>매입가</th>
+      <th>매입금액</th>
+      <th>보유수량</th>
+      <th>당일매도손익</th>
+      <th>당일매매수수료</th>
+      <th>당일매매세금</th>
+      <th>신용구분</th>
+      <th>대출일</th>
+      <th>결제잔고</th>
+      <th>청산가능한수량</th>
+      <th>신용금액</th>
+      <th>신용이자</th>
+      <th>만기일</th>
+      <th>평가손익</th>
+      <th>수익률</th>
+      <th>평가금액</th>
+      <th>수수료</th>
+      <th>매입수수료</th>
+      <th>매도수수료</th>
+      <th>매도세금</th>
+      <th>손익분기매입가</th>
+      <th>손익금액</th>
+      <th>손익율</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10085s.each do |rs| %>
+      <tr class="<%= cycle('active', 'warning') %>">
+				<td><%= rs.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+				<td><%= printOrderStatusName(rs.order_status) %></td>
+        <td><%= rs.date_of_purchase.strftime("%Y-%m-%d") %></td>
+        <td><%= rs.account_number %></td>
+        <td><%= rs.stock_code %></td>
+        <td><%= rs.stock_name %></td>
+        <td class="text-right"><%= nwd(rs.current_price) %></td>
+        <td class="text-right"><%= nwd(rs.purchase_price) %></td>
+        <td class="text-right"><%= nwd(rs.total_amount_of_purchase) %></td>
+        <td class="text-right"><%= nwd(rs.possession_quantity) %></td>
+        <td class="text-right"><%= nwd(rs.today_sell_profit_and_loss) %></td>
+        <td class="text-right"><%= nwd(rs.today_commission) %></td>
+        <td class="text-right"><%= nwd(rs.today_tax) %></td>
+        <td class="text-right"><%= nwd(rs.credit_gubun) %></td>
+        <td><%= rs.loan_date %></td>
+        <td class="text-right"><%= nwd(rs.payment_balance) %></td>
+        <td class="text-right"><%= nwd(rs.sellable_quantity) %></td>
+        <td class="text-right"><%= nwd(rs.credit_amount) %></td>
+        <td class="text-right"><%= nwd(rs.credit_interest) %></td>
+        <td><%= rs.expiration_date %></td>
+        <td class="text-right <%= printColor(rs.valuation_profit_and_loss) %>"><%= nwd(rs.valuation_profit_and_loss) %></td>
+        <td class="text-right <%= printColor(rs.earnings_rate) %>"><%= nwd(rs.earnings_rate) %></td>
+        <td class="text-right"><%= nwd(rs.evaluated_price) %></td>
+        <td class="text-right"><%= nwd(rs.commission) %></td>
+        <td class="text-right"><%= nwd(rs.selling_commission) %></td>
+        <td class="text-right"><%= nwd(rs.buying_commission) %></td>
+        <td class="text-right"><%= nwd(rs.selling_tax) %></td>
+        <td class="text-right"><%= nwd(rs.will_profit_price) %></td>
+        <td class="text-right <%= printColor(rs.not_commission_profit_and_loss) %>"><%= nwd(rs.not_commission_profit_and_loss) %></td>
+        <td class="text-right <%= printColor(rs.not_commission_profit_and_loss_rate) %>"><%= nwd(rs.not_commission_profit_and_loss_rate) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

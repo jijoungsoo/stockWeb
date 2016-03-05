@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<h1>실시간체결</h1>
+(Listing Realtime Contracts)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>체결시간</th>
+      <th>종목코드</th>
+      <th>현재가</th>
+      <th>전일대비</th>
+      <th>등락율</th>
+      <th>매도호가</th>
+      <th>매수호가</th>
+      <th>거래량</th>
+      <th>누적거래량</th>
+      <th>누적거래대금</th>
+      <th>시가</th>
+      <th>고가</th>
+      <th>저가</th>
+      <th>전일대비기호</th>
+      <th>전일거래량대비(계약,주)</th>
+      <th>거래대금증감</th>
+      <th>전일거래량대비(비율)</th>
+      <th>거래회전율</th>
+      <th>거래비용</th>
+      <th>체결강도</th>
+      <th>시가총액(억)</th>
+      <th>장구분</th>
+      <th>KO접근도</th>
+      <th>상한가발생시간</th>
+      <th>하한가발생시간</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @realtime_contracts.each do |realtime_contract| %>
+      <tr class="<%= cycle('active', 'success') -%>">
+        <td><%= realtime_contract.stock_date.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= realtime_contract.stock_code %></td>
+        <td><%= realtime_contract.current_price %></td>
+        <td><%= realtime_contract.contrast_yesterday %></td>
+        <td><%= realtime_contract.fluctuation_rate %></td>
+        <td><%= realtime_contract.offered_price %></td>
+        <td><%= realtime_contract.bid_price %></td>
+        <td><%= realtime_contract.trade_quantity %></td>
+        <td><%= realtime_contract.accumulated_trade_quantity %></td>
+        <td><%= realtime_contract.accumulated_trade_price %></td>
+        <td><%= realtime_contract.start_price %></td>
+        <td><%= realtime_contract.high_price %></td>
+        <td><%= realtime_contract.low_price %></td>
+        <td><%= realtime_contract.contrast_yesterday_symbol %></td>
+        <td><%= realtime_contract.yesterday_contrast_trade_quantity %></td>
+        <td><%= realtime_contract.trade_amount_variation %></td>
+        <td><%= realtime_contract.yesterday_contrast_trade_rate %></td>
+        <td><%= realtime_contract.trade_turnover_ratio %></td>
+        <td><%= realtime_contract.trade_cost %></td>
+        <td><%= realtime_contract.contract_strength %></td>
+        <td><%= realtime_contract.total_market_price %></td>
+        <td><%= realtime_contract.market_gubun %></td>
+        <td><%= realtime_contract.ko_accessibility_rate %></td>
+        <td><%= realtime_contract.upper_price_limit_time %></td>
+        <td><%= realtime_contract.lower_price_limit_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

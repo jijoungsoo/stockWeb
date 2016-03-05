@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  search_date: 2016-02-27 21:20:18
+  account_number: MyString
+  estimation_deposition_property: 1
+
+two:
+  search_date: 2016-02-27 21:20:18
+  account_number: MyString
+  estimation_deposition_property: 1

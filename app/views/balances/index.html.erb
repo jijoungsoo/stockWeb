@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>잔고</h1>
+(Listing Balances)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>기록시간</th>
+      <th>계좌번호</th>
+      <th>종목코드</th>
+      <th>현재가</th>
+      <th>보유수량</th>
+      <th>매입단가</th>
+      <th>총매입가</th>
+      <th>주문가능수량</th>
+      <th>당일순매수량</th>
+      <th>매도/매수구분</th>
+      <th>당일총매도손익</th>
+      <th>예수금</th>
+      <th>매도호가</th>
+      <th>매수호가</th>
+      <th>기준가(어제종가)</th>
+      <th>손익율</th>
+      <th>주식옵션거래단위</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @balances.each do |balance| %>
+      <tr class="<%= cycle('active', 'success') -%>">
+        <td><%= balance.reg_time %></td>
+        <td><%= balance.account_number %></td>
+        <td><%= balance.stock_code %></td>
+        <td><%= balance.current_price %></td>
+        <td><%= balance.possession_quantity %></td>
+        <td><%= balance.purchase_price %></td>
+        <td><%= balance.total_amount_of_purchase %></td>
+        <td><%= balance.order_possible_quantity %></td>
+        <td><%= balance.today_net_buy_quantity %></td>
+        <td><%= balance.order_type %></td>
+        <td><%= balance.today_sell_profit_and_loss %></td>
+        <td><%= balance.deposit %></td>
+        <td><%= balance.offered_price %></td>
+        <td><%= balance.bid_price %></td>
+        <td><%= balance.yesterday_current_price %></td>
+        <td><%= balance.not_commission_profit_and_loss_rate %></td>
+        <td><%= balance.stock_option_trade_unit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

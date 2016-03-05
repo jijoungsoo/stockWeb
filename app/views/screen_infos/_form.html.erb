@@ -1,0 +1,29 @@
+<%= form_for(@screen_info) do |f| %>
+  <% if @screen_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@screen_info.errors.count, "error") %> prohibited this screen_info from being saved:</h2>
+
+      <ul>
+      <% @screen_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :screen_number %><br>
+    <%= f.text_field :screen_number %>
+  </div>
+  <div class="field">
+    <%= f.label :tr_code %><br>
+    <%= f.text_field :tr_code %>
+  </div>
+  <div class="field">
+    <%= f.label :rq_name %><br>
+    <%= f.text_field :rq_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

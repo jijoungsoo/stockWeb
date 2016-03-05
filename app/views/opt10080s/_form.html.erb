@@ -1,0 +1,85 @@
+<%= form_for(@opt10080) do |f| %>
+  <% if @opt10080.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opt10080.errors.count, "error") %> prohibited this opt10080 from being saved:</h2>
+
+      <ul>
+      <% @opt10080.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stock_code %><br>
+    <%= f.text_field :stock_code %>
+  </div>
+  <div class="field">
+    <%= f.label :current_price %><br>
+    <%= f.number_field :current_price %>
+  </div>
+  <div class="field">
+    <%= f.label :trade_quantity %><br>
+    <%= f.number_field :trade_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_time %><br>
+    <%= f.datetime_select :contract_time %>
+  </div>
+  <div class="field">
+    <%= f.label :start_price %><br>
+    <%= f.number_field :start_price %>
+  </div>
+  <div class="field">
+    <%= f.label :high_price %><br>
+    <%= f.number_field :high_price %>
+  </div>
+  <div class="field">
+    <%= f.label :low_price %><br>
+    <%= f.number_field :low_price %>
+  </div>
+  <div class="field">
+    <%= f.label :modify_stock_gubun %><br>
+    <%= f.number_field :modify_stock_gubun %>
+  </div>
+  <div class="field">
+    <%= f.label :modify_rate %><br>
+    <%= f.text_field :modify_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :big_type_of_business %><br>
+    <%= f.number_field :big_type_of_business %>
+  </div>
+  <div class="field">
+    <%= f.label :small_type_of_business %><br>
+    <%= f.number_field :small_type_of_business %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_info %><br>
+    <%= f.number_field :stock_info %>
+  </div>
+  <div class="field">
+    <%= f.label :modify_stock_event %><br>
+    <%= f.number_field :modify_stock_event %>
+  </div>
+  <div class="field">
+    <%= f.label :yesterday_current_price %><br>
+    <%= f.number_field :yesterday_current_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

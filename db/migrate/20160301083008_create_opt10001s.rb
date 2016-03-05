@@ -1,0 +1,52 @@
+class CreateOpt10001s < ActiveRecord::Migration
+  def change
+    create_table :opt10001s , id:false ,:comment => "주식기본정보요청"  do |t|
+      t.timestamp :stock_date ,:comment => "일자"
+      t.string :stock_code, limit: 9  ,:comment => "종목코드"
+      t.string :stock_name, limit: 50 ,:comment => "종목명"
+      t.integer :settling_account_month ,:comment => "결산월"
+      t.integer :face_value ,:comment => "액면가"
+      t.integer :capital ,:comment => "자본금"
+      t.integer :stock_count ,:comment => "상장주식"
+      t.decimal :credit_rate, precision:5 , scale:2 ,:comment => "신용비율"
+      t.integer :year_high_price ,:comment => "연중최고"
+      t.integer :year_low_price ,:comment => "연중최저"
+      t.integer :total_market_price ,:comment => "시가총액"
+      t.decimal :total_market_price_rate , precision:5 , scale:2 ,:comment => "시가총액비중"
+      t.decimal :foreigner_exhaustion_rate , precision:5 , scale:2 ,:comment => "외인소진률"
+      t.integer :substitute_price ,:comment => "대용가"
+      t.decimal :per , precision:5 , scale:2 ,:comment => "주가수익률"
+      t.decimal :eps , precision:5 , scale:2 ,:comment => "주당순이익"
+      t.decimal :roe , precision:5 , scale:2 ,:comment => "자기자본이익률"
+      t.decimal :pbr , precision:5 , scale:2 ,:comment => "주가순자산비율"
+      t.decimal :ev , precision:5 , scale:2 ,:comment => "이자비용,법인세비용, 감가상각비용을 공제하기 전의 이익"
+      t.decimal :bps , precision:5 , scale:2 ,:comment => "주당순자산가치"
+      t.integer :sales ,:comment => "매출액"
+      t.integer :business_profits ,:comment => "영업이익"
+      t.integer :d250_high_price ,:comment => "D250최고"
+      t.integer :d250_low_price ,:comment => "D250최저"
+      t.integer :start_price ,:comment => "시가"
+      t.integer :high_price ,:comment => "고가"
+      t.integer :low_price ,:comment => "저가"
+      t.integer :upper_price_limit ,:comment => "상한가"
+      t.integer :lower_price_limit ,:comment => "하한가"
+      t.integer :yesterday_current_price ,:comment => "기준가"
+      t.string :expectation_contract_price ,:comment => "예상체결가"
+      t.integer :expectation_contract_quantity ,:comment => "예상체결수량"
+      t.timestamp :d250_high_date ,:comment => "D250최고가일"
+      t.decimal :d250_high_rate  , precision:5 , scale:2 ,:comment => "D250최고가대비율"
+      t.timestamp :d250_low_date ,:comment => "D250최저가일"
+      t.decimal :d250_low_rate  , precision:5 , scale:2 ,:comment => "D250최저가대비율"
+      t.integer :current_price ,:comment => "현재가"
+      t.integer :contrast_symbol ,:comment => "대비기호"
+      t.integer :contrast_yesterday ,:comment => "전일대비"
+      t.decimal :fluctuation_rate  , precision:5 , scale:2  ,:comment => "등락율"
+      t.integer :trade_quantity ,:comment => "거래량"
+      t.decimal :trade_contrast , precision:5 , scale:2  ,:comment => "거래대비"
+      t.integer :face_value_unit ,:comment => "액면가단위"
+
+      t.timestamps null: false
+    end
+    add_index :opt10001s, [:stock_date, :stock_code ] , unique: true
+  end
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @domain.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @domain.description %>
+</p>
+
+<p>
+  <strong>English keyword:</strong>
+  <%= @domain.english_keyword %>
+</p>
+
+<%= link_to 'Edit', edit_domain_path(@domain) %> |
+<%= link_to 'Back', domains_path %>

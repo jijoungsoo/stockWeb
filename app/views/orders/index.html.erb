@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<h1>주문접수</h1>
+(Listing Orders)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>주문시간</th>
+      <th>계좌번호</th>
+      <th>주문번호</th>
+      <th>관리자사번</th>
+      <th>종목코드</th>
+      <th>주문업무분류</th>
+      <th>주문상태</th>
+      <th>종목명</th>
+      <th>주문수량</th>
+      <th>주문가격</th>
+      <th>미체결수량</th>
+      <th>체결누계금액</th>
+      <th>원주문번호</th>
+      <th>주문구분</th>
+      <th>매도수구분</th>
+      <th>체결번호</th>
+      <th>체결가</th>
+      <th>체결량</th>
+      <th>현재가</th>
+      <th>매도호가</th>
+      <th>매도호가</th>
+      <th>단위체결가</th>
+      <th>단위체결량</th>
+      <th>단위체결량</th>
+      <th>단위체결량</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr class="<%= cycle('active', 'success') -%>">
+        <td><%= order.contract_time %></td>
+        <td><%= order.account_number %></td>
+        <td><%= order.order_number %></td>
+        <td><%= order.manager_number %></td>
+        <td><%= order.stock_code %></td>
+        <td><%= order.order_business_classification %></td>
+        <td><%= order.order_status %></td>
+        <td><%= order.stock_name %></td>
+        <td><%= order.order_quantity %></td>
+        <td><%= order.order_price %></td>
+        <td><%= order.not_contract_quantity %></td>
+        <td><%= order.contract_total_amount %></td>
+        <td><%= order.last_order_number %></td>
+        <td><%= order.order_gubun %></td>
+        <td><%= order.trade_gubun %></td>
+        <td><%= order.order_type %></td>
+        <td><%= order.contract_number %></td>
+        <td><%= order.contract_price %></td>
+        <td><%= order.current_price %></td>
+        <td><%= order.offered_price %></td>
+        <td><%= order.bid_price %></td>
+        <td><%= order.contract_price_unit %></td>
+        <td><%= order.contract_price_quantity %></td>
+        <td><%= order.today_commission %></td>
+        <td><%= order.today_tax %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Screen Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Screen number</th>
+      <th>Tr code</th>
+      <th>Rq name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @screen_infos.each do |screen_info| %>
+      <tr>
+        <td><%= screen_info.screen_number %></td>
+        <td><%= screen_info.tr_code %></td>
+        <td><%= screen_info.rq_name %></td>
+        <td><%= link_to 'Show', screen_info %></td>
+        <td><%= link_to 'Edit', edit_screen_info_path(screen_info) %></td>
+        <td><%= link_to 'Destroy', screen_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Screen info', new_screen_info_path %>

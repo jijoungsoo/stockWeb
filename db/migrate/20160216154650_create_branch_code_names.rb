@@ -1,8 +1,8 @@
 class CreateBranchCodeNames < ActiveRecord::Migration
   def change
-    create_table :branch_code_names,id: false do |t|
-      t.string :branch_code, limit: 3
-      t.string :branch_name, limit: 30
+    create_table :branch_code_names,id: false ,:comment => "회원사코드표"  do |t|
+      t.string :branch_code, limit: 3 ,:comment => "회원사코드"
+      t.string :branch_name, limit: 30 ,:comment => "회원사명"
 
       t.timestamps null: false
     end

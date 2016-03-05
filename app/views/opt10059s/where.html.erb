@@ -1,0 +1,45 @@
+<%= form_tag(opt10059s_list_path, method: "get",target: "list" ) do %>
+<table border="0">
+<tr>
+	<td>
+	  <div class="form-group">
+			<%= label_tag(:start_date, "시작일:") %>
+			<%=date_field_tag(:start_date,(DateTime.now()-14).strftime("%Y-%m-%d")) %>
+~
+			<%= label_tag(:end_date, "종료일:") %>
+			<%=date_field_tag(:end_date,DateTime.now().strftime("%Y-%m-%d")) %>
+	  </div>
+  </td>
+  <td rowspan="2" align="center" valign="center">
+    <button type="submit" class="btn btn-primary">조회</button>
+  </td>
+</tr>
+<tr>
+   <td>
+	  <div class="form-group">
+			<%= label_tag(:stock_code, "종목코드:") %>
+     <%= text_field_tag(:stock_code) %>
+	  </div>
+
+	  <div class="form-group">
+			<%= label_tag("","요일:") %>
+			<label>
+				<%= check_box_tag(:week_monday,"1",{:checked => "checked"}) %> 월
+			</label>
+			<label>
+				<%= check_box_tag(:week_tuesday,"2",{:checked => "checked"}) %> 화
+			</label>
+			<label>
+				<%= check_box_tag(:week_wednesday,"3",{:checked => "checked"}) %> 수
+			</label>
+			<label>
+				<%= check_box_tag(:week_thursday,"4",{:checked => "checked"}) %> 목
+			</label>
+			<label>
+				<%= check_box_tag(:week_friday,"5",{:checked => "checked"}) %> 금
+			</label>
+	  </div>
+	</td>
+</tr>
+</table>
+<% end %>

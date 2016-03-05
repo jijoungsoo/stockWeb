@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opt10075s</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>체결시간</th>
+      <th>계좌번호</th>
+      <th>주문번호</th>
+      <th>관리자사번</th>
+      <th>종목코드</th>
+      <th>업무구분</th>
+      <th>주문상태</th>
+      <th>종목명</th>
+      <th>주문수량</th>
+      <th>주문가격</th>
+      <th>미체결수량</th>
+      <th>체결누계금액</th>
+      <th>원주문번호</th>
+      <th>주문구분</th>
+      <th>매매구분</th>
+      <th>체결번호</th>
+      <th>체결가</th>
+      <th>체결량</th>
+      <th>현재가</th>
+      <th>매도호가</th>
+      <th>매수호가</th>
+      <th>단위체결가</th>
+      <th>단위체결량</th>
+      <th>당일매매수수료</th>
+      <th>당일매매세금</th>
+      <th>개인투자자</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10075s.each do |opt10075| %>
+      <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= opt10075.contract_time.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= opt10075.account_number %></td>
+        <td><%= opt10075.order_number %></td>
+        <td><%= opt10075.manager_number %></td>
+        <td><%= opt10075.stock_code %></td>
+        <td><%= opt10075.business_gubun %></td>
+        <td><%= opt10075.order_status %></td>
+        <td><%= opt10075.stock_name %></td>
+        <td><%= opt10075.order_quantity %></td>
+        <td><%= opt10075.order_price %></td>
+        <td><%= opt10075.not_contract_quantity %></td>
+        <td><%= opt10075.contract_total_amount %></td>
+        <td><%= opt10075.last_order_number %></td>
+        <td><%= opt10075.order_gubun %></td>
+        <td><%= opt10075.trade_gubun %></td>
+        <td><%= opt10075.contract_number %></td>
+        <td><%= opt10075.contract_price %></td>
+        <td><%= opt10075.contract_quantity %></td>
+        <td><%= opt10075.current_price %></td>
+        <td><%= opt10075.offered_price %></td>
+        <td><%= opt10075.bid_price %></td>
+        <td><%= opt10075.contract_price_unit %></td>
+        <td><%= opt10075.contract_price_quantity %></td>
+        <td><%= opt10075.today_commission %></td>
+        <td><%= opt10075.today_tax %></td>
+        <td><%= opt10075.domestic_investor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opt10075', new_opt10075_path %>

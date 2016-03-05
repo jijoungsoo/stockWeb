@@ -1,0 +1,64 @@
+<%
+	def printColor(value)
+		ret=''
+			if (value<0)
+				ret='text-primary'
+			elsif (value>0)
+				ret='text-danger'
+			end
+		return ret
+  end
+
+	def printColor2(value)
+		ret=''
+			if (value>=4)
+				ret='text-primary'
+			elsif (value>0)
+				ret='text-danger'
+			end
+		return ret
+  end
+%>
+
+<p id="notice"><%= notice %></p>
+
+<h1>공매도추이요청</h1>
+(Listing Opt10014s)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>일자</th>
+      <th>종목코드</th>
+      <th>현재가</th>
+      <th>대비기호</th>
+      <th>전일대비</th>
+      <th>등락율</th>
+      <th>거래량</th>
+      <th>공매도량</th>
+      <th>매매비중</th>
+      <th>공매도거래대금</th>
+      <th>공매도평균가</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10014s.each do |rs| %>
+    <tr class="<%= cycle('active', 'warning') %>">
+        <td class="text-right"><%= rs.stock_date.strftime("%Y-%m-%d") %></td>
+        <td class="text-right"><%= rs.stock_code %></td>
+        <td class="text-right <%=printColor(rs.current_price) %>"><%= nwd(rs.current_price) %></td>
+        <td class="text-right <%=printColor(rs.contrast_symbol) %>"><%= nwd(rs.contrast_symbol) %></td>
+        <td class="text-right <%=printColor(rs.contrast_yesterday) %>"><%= nwd(rs.contrast_yesterday) %></td>
+        <td class="text-right <%=printColor(rs.fluctuation_rate) %>"><%= nwd(rs.fluctuation_rate) %></td>
+        <td class="text-right <%=printColor(rs.trade_quantity) %>"><%= nwd(rs.trade_quantity) %></td>
+        <td class="text-right <%=printColor(rs.short_selling_quantity) %>"><%= nwd(rs.short_selling_quantity) %></td>
+        <td class="text-right <%=printColor(rs.trade_rate) %>"><%= nwd(rs.trade_rate) %></td>
+        <td class="text-right <%=printColor(rs.short_selling_trade_price) %>"><%= nwd(rs.short_selling_trade_price) %></td>
+        <td class="text-right <%=printColor(rs.short_selling_average_price) %>"><%= nwd(rs.short_selling_average_price) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

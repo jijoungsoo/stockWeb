@@ -1,0 +1,345 @@
+<%= form_for(@opt10001) do |f| %>
+  <% if @opt10001.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opt10001.errors.count, "error") %> prohibited this opt10001 from being saved:</h2>
+
+      <ul>
+      <% @opt10001.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stock_date %><br>
+    <%= f.datetime_select :stock_date %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_code %><br>
+    <%= f.text_field :stock_code %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_name %><br>
+    <%= f.text_field :stock_name %>
+  </div>
+  <div class="field">
+    <%= f.label :settling_account_month %><br>
+    <%= f.number_field :settling_account_month %>
+  </div>
+  <div class="field">
+    <%= f.label :face_value %><br>
+    <%= f.number_field :face_value %>
+  </div>
+  <div class="field">
+    <%= f.label :capital %><br>
+    <%= f.number_field :capital %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_count %><br>
+    <%= f.number_field :stock_count %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_rate %><br>
+    <%= f.text_field :credit_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :year_high_price %><br>
+    <%= f.number_field :year_high_price %>
+  </div>
+  <div class="field">
+    <%= f.label :year_low_price %><br>
+    <%= f.number_field :year_low_price %>
+  </div>
+  <div class="field">
+    <%= f.label :total_market_price %><br>
+    <%= f.number_field :total_market_price %>
+  </div>
+  <div class="field">
+    <%= f.label :total_market_price_rate %><br>
+    <%= f.text_field :total_market_price_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :foreigner_exhaustion_rate %><br>
+    <%= f.text_field :foreigner_exhaustion_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :substitute_price %><br>
+    <%= f.number_field :substitute_price %>
+  </div>
+  <div class="field">
+    <%= f.label :per %><br>
+    <%= f.text_field :per %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :eps %><br>
+    <%= f.text_field :eps %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :roe %><br>
+    <%= f.text_field :roe %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :pbr %><br>
+    <%= f.text_field :pbr %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :ev %><br>
+    <%= f.text_field :ev %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :bps %><br>
+    <%= f.text_field :bps %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :sales %><br>
+    <%= f.number_field :sales %>
+  </div>
+  <div class="field">
+    <%= f.label :business_profits %><br>
+    <%= f.number_field :business_profits %>
+  </div>
+  <div class="field">
+    <%= f.label :d250_high_price %><br>
+    <%= f.number_field :d250_high_price %>
+  </div>
+  <div class="field">
+    <%= f.label :d250_low_price %><br>
+    <%= f.number_field :d250_low_price %>
+  </div>
+  <div class="field">
+    <%= f.label :start_price %><br>
+    <%= f.number_field :start_price %>
+  </div>
+  <div class="field">
+    <%= f.label :high_price %><br>
+    <%= f.number_field :high_price %>
+  </div>
+  <div class="field">
+    <%= f.label :low_price %><br>
+    <%= f.number_field :low_price %>
+  </div>
+  <div class="field">
+    <%= f.label :upper_price_limit %><br>
+    <%= f.number_field :upper_price_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :lower_price_limit %><br>
+    <%= f.number_field :lower_price_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :expectation_contract_price %><br>
+    <%= f.text_field :expectation_contract_price %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br>
+    <%= f.number_field : %>
+  </div>
+  <div class="field">
+    <%= f.label :expectation_contract_quantity %><br>
+    <%= f.number_field :expectation_contract_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :d250_high_date %><br>
+    <%= f.datetime_select :d250_high_date %>
+  </div>
+  <div class="field">
+    <%= f.label :d250_high_rate %><br>
+    <%= f.text_field :d250_high_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :d250_low_date %><br>
+    <%= f.datetime_select :d250_low_date %>
+  </div>
+  <div class="field">
+    <%= f.label :d250_low_rate %><br>
+    <%= f.text_field :d250_low_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :current_price %><br>
+    <%= f.number_field :current_price %>
+  </div>
+  <div class="field">
+    <%= f.label :contrast_symbol %><br>
+    <%= f.number_field :contrast_symbol %>
+  </div>
+  <div class="field">
+    <%= f.label :contrast_yesterday %><br>
+    <%= f.number_field :contrast_yesterday %>
+  </div>
+  <div class="field">
+    <%= f.label :fluctuation_rate %><br>
+    <%= f.text_field :fluctuation_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :trade_quantity %><br>
+    <%= f.number_field :trade_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :trade_contrast %><br>
+    <%= f.text_field :trade_contrast %>
+  </div>
+  <div class="field">
+    <%= f.label :, %><br>
+    <%= f.text_field :, %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br>
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.text_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :face_value_unit %><br>
+    <%= f.number_field :face_value_unit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

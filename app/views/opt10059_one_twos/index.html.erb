@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>종목투자자기관별_매수_수량</h1>
+(Listing Opt10059 One Twos)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>일자</th>
+      <th>종목코드</th>
+      <th>현재가</th>
+      <th>대비기호</th>
+      <th>전일대비</th>
+      <th>등락율</th>
+      <th>누적거래대금</th>
+      <th>개인투자자</th>
+      <th>외국인투자자</th>
+      <th>기관계</th>
+      <th>금융투자</th>
+      <th>보험</th>
+      <th>투신</th>
+      <th>기타금융</th>
+      <th>은행</th>
+      <th>연기금등</th>
+      <th>사모펀드</th>
+      <th>국가</th>
+      <th>기타법인</th>
+      <th>내외국인</th>
+      <th>매매구분</th>
+      <th>금액수량구분</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10059_one_twos.each do |opt10059_one_two| %>
+    <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= opt10059_one_two.stock_date.strftime("%Y-%m-%d") %></td>
+        <td class="text-right"><%= opt10059_one_two.stock_code %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.current_price) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.contrast_symbol) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.contrast_yesterday) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.fluctuation_rate) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.accumulated_trade_price) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.domestic_investor) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.foreign_investor) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.institution) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.financial_investment) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.insurance) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.investment_trust) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.etc_financial) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.bank) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.pension_fund) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.private_equity_fund) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.nation) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.etc_corporation) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.foregin_investment_in_korea) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.buyOrSell) %></td>
+        <td class="text-right"><%= number_with_delimiter(opt10059_one_two.priceOrAmount) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

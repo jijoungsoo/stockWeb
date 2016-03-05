@@ -1,0 +1,1 @@
+json.extract! @opt10080, :id, :stock_code, :current_price, :trade_quantity, :contract_time, :start_price, :high_price, :low_price, :modify_stock_gubun, :modify_rate, :,, :precision, :scale, :big_type_of_business, :small_type_of_business, :stock_info, :modify_stock_event, :yesterday_current_price, :created_at, :updated_at

@@ -1,0 +1,2 @@
+module ScreenInfosHelper
+end

@@ -26,20 +26,20 @@ class StocksController < ApplicationController
 	markets=Market.all
         stocks=Stock.all
         stocks.delete_all
-        kiwoomApi = KiwoomApi.new()     
+        kiwoomApi = KiwoomApi.new()
         stock_code_list_all=[]
         market_code_list=[]
         markets.each do |market|
                 stock_code_list=kiwoomApi.get_code_list_by_market(market.market_code)
 
-                if stock_code_list!=nil    
+                if stock_code_list!=nil
                         stock_code_list_all=stock_code_list_all+stock_code_list
                         stock_code_list.map do |stock_code|
                             market_code_list<<[market.market_code,stock_code]
                         end
-                end 
+                end
         end
-	stock_code_list_all.uniq!
+	      stock_code_list_all.uniq!
         stock_code_list_all.each do |stock_code|
                 stock_name=kiwoomApi.get_master_code_name(stock_code)
                 stock_open_date=kiwoomApi.get_master_listed_stock_date(stock_code)
@@ -47,7 +47,7 @@ class StocksController < ApplicationController
                   :stock_code => stock_code,
                   :stock_name => stock_name,
                   :stock_open_date => stock_open_date)
-                  puts tmp 
+                  puts tmp
         end
 
 	market_stock = MarketStock.all
@@ -63,7 +63,7 @@ class StocksController < ApplicationController
 
   end
 
-private 
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
       @stock = Stock.find(params[:id])

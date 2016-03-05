@@ -9,7 +9,7 @@ class KiwoomApi
                       strip_namespaces: false,
                       open_timeout:1800,
                       read_timeout:1800
-                      ) 
+                      )
 	end
 
 
@@ -24,7 +24,7 @@ class KiwoomApi
 		if marketTmp!=nil
        	 		marketTmp = marketTmp.split(";").map { |s| s.to_s }
         		marketTmp=marketTmp.uniq;
-		end		
+		end
 		return marketTmp
 	end
 
@@ -62,7 +62,7 @@ class KiwoomApi
 		message = { "tns:nType" => nTypes['코드순']}
 		response = @client_soap.call(:get_theme_group_list,message:message)
 		#puts response
-		#puts response.body 
+		#puts response.body
 		#puts response.body[:get_theme_group_list_response]
 		#puts response.body[:get_theme_group_list_response][:get_theme_group_list_result]
 		themes=response.body[:get_theme_group_list_response][:get_theme_group_list_result]
@@ -87,7 +87,7 @@ class KiwoomApi
 		message = { "tns:strThemeCode" => theme_code }
 		response = @client_soap.call(:get_theme_group_code,message:message)
 #		puts response
-#		puts response.body 
+#		puts response.body
 #		puts response.body[:get_theme_group_code_response]
 #		puts response.body[:get_theme_group_code_response][:get_theme_group_code_result]
 		themes=response.body[:get_theme_group_code_response][:get_theme_group_code_result]
@@ -100,7 +100,7 @@ class KiwoomApi
                 message = { "tns:strCode" =>strCode, "tns:startDate"=>startDate ,"tns:endDate"=>endDate }
                 response = @client_soap.call(:get_opt10081,message:message)
 #               puts response
-#               puts response.body 
+#               puts response.body
 #               puts response.body[:get_opt10081_response]
 #               puts response.body[:get_opt10081_response][:get_opt10081_result]
                 ret=response.body[:get_opt10081_response][:get_opt10081_result]
@@ -116,7 +116,7 @@ class KiwoomApi
 		#비고 Ex) openApi.GetBranchCodeName();
 		response = @client_soap.call(:get_branch_code_name)
 		#puts response
-		#puts response.body 
+		#puts response.body
 		#puts response.body[:get_branch_code_name_response]
 		branchCodeNames= response.body[:get_branch_code_name_response][:get_branch_code_name_result]
 		h = {}
@@ -132,12 +132,43 @@ class KiwoomApi
 	#	    puts value
 	#	end
 	end
-	
 
+	def get_opw00003(account_number,password)
+		  #추정자산조회요청
+      message = { "tns:accountNum" =>account_number, "tns:password"=>password}
+      response = @client_soap.call(:get_opw00003,message:message)
+#               puts response
+#               puts response.body
+#               puts response.body[:get_opt10081_response]
+#               puts response.body[:get_opt10081_response][:get_opt10081_result]
+      ret=response.body[:get_opw00003_response][:get_opw00003_result]
+      return ret
+
+	end
+
+	def get_opt10085(account_number)
+		  #계좌수익률요청
+      message = { "tns:accountNum" =>account_number}
+      response = @client_soap.call(:get_opt10085,message:message)
+#               puts response
+#               puts response.body
+#               puts response.body[:get_opt10081_response]
+#               puts response.body[:get_opt10081_response][:get_opt10081_result]
+      ret=response.body[:get_opt10085_response][:get_opt10085_result]
+      return ret
+
+	end
+
+	def get_condition_name_list()
+			#조건검색 조건명 리스트를 받아온다
+			response = @client_soap.call(:get_condition_name_list,message:message)
+#               puts response
+#               puts response.body
+#               puts response.body[:get_opt10081_response]
+#               puts response.body[:get_opt10081_response][:get_opt10081_result]
+			ret=response.body[:get_condition_name_list_response][:get_condition_name_list_result]
+			 return ret
+
+	end
 
 end
-
-
-
-
-

@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_date: 2016-02-17 16:58:34
+  stock_code: 1
+  current_price: 1
+  contrast_symbol: 1
+  contrast_yesterday: 1
+  fluctuation_rate: 1
+  accumulated_trade_price: 1
+  domestic_investor: 1
+  foreign_investor: 1
+  institution: 1
+  financial_investment: 1
+  insurance: 1
+  investment_trust: 1
+  etc_financial: 1
+  bank: 1
+  pension_fund: 1
+  private_equity_fund: 1
+  nation: 1
+  etc_corporation: 1
+  foregin_investment_in_korea: 1
+  buyOrSell: 1
+  priceOrAmount: 1
+
+two:
+  stock_date: 2016-02-17 16:58:34
+  stock_code: 1
+  current_price: 1
+  contrast_symbol: 1
+  contrast_yesterday: 1
+  fluctuation_rate: 1
+  accumulated_trade_price: 1
+  domestic_investor: 1
+  foreign_investor: 1
+  institution: 1
+  financial_investment: 1
+  insurance: 1
+  investment_trust: 1
+  etc_financial: 1
+  bank: 1
+  pension_fund: 1
+  private_equity_fund: 1
+  nation: 1
+  etc_corporation: 1
+  foregin_investment_in_korea: 1
+  buyOrSell: 1
+  priceOrAmount: 1

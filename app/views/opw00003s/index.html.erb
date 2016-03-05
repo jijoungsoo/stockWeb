@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>추정자산조회</h1>
+Listing Opw00003s
+
+<%= link_to 'New Opw00003', new_opw00003_path %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>현재시간</th>
+      <th>조회시간</th>
+      <th>계좌번호</th>
+      <th>추정예탁자산</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% nowTime =  DateTime.now %>
+    <% @opw00003s.each do |rs| %>
+      <tr
+      <% if TimeDifference.between(nowTime,rs.search_date ).in_seconds<=5 %>
+      class="success"
+      <% else %>
+      class="danger"
+      <% end %>
+      >
+        <td><%= nowTime.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= rs.search_date.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= rs.account_number %></td>
+        <td><%= number_with_delimiter(rs.estimation_deposition_property) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

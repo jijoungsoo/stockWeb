@@ -1,44 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Stocks</h1>
-
-
-<%= link_to 'New Stock Daily Info', new_opt10081_path %>
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-     <th>Stock date(일자)</th>
-     <th>Stock code(종목코드)</th>
-     <th>current_price(현재가-종가비슷)</th>
-     <th>trade_quantity(거래량)</th>
-     <th>trade_price(거래대금)</th>
-     <th>start_price(시가-장시작가)</th>
-     <th>high_price(고가)</th>
-     <th>low_price(저가)</th>
-     <th>생성일</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @opt10081s.each do |opt10081| %>
-      <tr class="<%= cycle('active', 'success') -%>">
-        <td><%= opt10081.stock_date.strftime("%Y-%m-%d") %></td>
-        <td><%= opt10081.stock_code %></td>
-        <td class="text-right"><%= number_with_delimiter(opt10081.current_price) %></td>
-        <td class="text-right"><%= number_with_delimiter(opt10081.trade_quantity) %></td>
-        <td class="text-right"><%= number_with_delimiter(opt10081.trade_price) %></td>
-        <td class="text-right"><%= number_with_delimiter(opt10081.start_price) %></td>
-        <td class="text-right"><%= number_with_delimiter(opt10081.high_price)  %></td>
-        <td class="text-right"><%= number_with_delimiter(opt10081.low_price) %></td>
-        <td><%= opt10081.created_at.strftime("%Y-%m-%d %H:%M") %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= paginate @opt10081s %>
-
-<br>
-
+<frameset rows="200,*" frameborder="1">
+	<frame src="<%=opt10081s_where_path%>">
+	<frame name="list" src="<%=opt10081s_list_path%>"">
+</frameset>

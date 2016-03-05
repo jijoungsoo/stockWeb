@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Screen number:</strong>
+  <%= @screen_info.screen_number %>
+</p>
+
+<p>
+  <strong>Tr code:</strong>
+  <%= @screen_info.tr_code %>
+</p>
+
+<p>
+  <strong>Rq name:</strong>
+  <%= @screen_info.rq_name %>
+</p>
+
+<%= link_to 'Edit', edit_screen_info_path(@screen_info) %> |
+<%= link_to 'Back', screen_infos_path %>

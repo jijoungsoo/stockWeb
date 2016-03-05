@@ -1,2 +1,46 @@
-<h1>Stocks#list</h1>
-<p>Find me in app/views/stocks/list.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stocks</h1>
+
+<label>
+sql: <%=@opt10081s.to_sql %>
+</label>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+     <th>Stock date(일자)</th>
+     <th>종목이름</th>
+     <th>Stock code(종목코드)</th>
+     <th>current_price(현재가-종가비슷)</th>
+     <th>trade_quantity(거래량)</th>
+     <th>trade_price(거래대금)</th>
+     <th>start_price(시가-장시작가)</th>
+     <th>high_price(고가)</th>
+     <th>low_price(저가)</th>
+     <th>생성일</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10081s.each do |rs| %>
+      <tr class="<%= cycle('active', 'success') -%>">
+        <td><%= rs.stock_date.strftime("%Y-%m-%d") %></td>
+        <td><%= get_stock_name(rs.stock_code) %></td>
+        <td><%= rs.stock_code %></td>
+        <td class="text-right"><%= number_with_delimiter(rs.current_price) %></td>
+        <td class="text-right"><%= number_with_delimiter(rs.trade_quantity) %></td>
+        <td class="text-right"><%= number_with_delimiter(rs.trade_price) %></td>
+        <td class="text-right"><%= number_with_delimiter(rs.start_price) %></td>
+        <td class="text-right"><%= number_with_delimiter(rs.high_price)  %></td>
+        <td class="text-right"><%= number_with_delimiter(rs.low_price) %></td>
+        <td><%= rs.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @opt10081s %>
+
+<br>

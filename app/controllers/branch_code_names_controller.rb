@@ -19,8 +19,7 @@ class BranchCodeNamesController < ApplicationController
   # POST /branch_code_names
   # POST /branch_code_names.json
   def create
-    branch_code_names = BranchCodeName.all
-    branch_code_names.delete_all
+    BranchCodeName.delete_all
     kiwoomApi = KiwoomApi.new();
     tmp=kiwoomApi.get_branch_code_name();
     puts tmp;
@@ -36,20 +35,7 @@ class BranchCodeNamesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /branch_code_names/1
-  # PATCH/PUT /branch_code_names/1.json
-  def update
-    respond_to do |format|
-      if @branch_code_name.update(branch_code_name_params)
-        format.html { redirect_to @branch_code_name, notice: 'Branch code name was successfully updated.' }
-        format.json { render :show, status: :ok, location: @branch_code_name }
-      else
-        format.html { render :edit }
-        format.json { render json: @branch_code_name.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_branch_code_name
       @branch_code_name = BranchCodeName.find(params[:id])

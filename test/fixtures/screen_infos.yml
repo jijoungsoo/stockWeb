@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  screen_number: MyString
+  tr_code: MyString
+  rq_name: MyString
+
+two:
+  screen_number: MyString
+  tr_code: MyString
+  rq_name: MyString

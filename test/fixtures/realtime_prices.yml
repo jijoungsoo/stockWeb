@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_date: 2016-03-03 12:36:12
+  stock_code: MyString
+  current_price: 1
+  contrast_yesterday: 9.99
+  fluctuation_rate: 9.99
+  offered_price: 1
+  bid_price: 1
+  accumulated_trade_quantity: 1
+  accumulated_trade_price: 1
+  start_price: 1
+  high_price: 1
+  low_price: 1
+  contrast_yesterday_symbol: 1
+  contrast_yesterday_symbol: 1
+  yesterday_contrast_trade_quantity: 1
+  trade_amount_variation: 9.99
+  yesterday_contrast_trade_rate: 9.99
+  trade_turnover_ratio: 9.99
+  trade_cost: 1
+  total_market_price: 1
+  upper_price_limit_time: MyString
+  lower_price_limit_time: MyString
+
+two:
+  stock_date: 2016-03-03 12:36:12
+  stock_code: MyString
+  current_price: 1
+  contrast_yesterday: 9.99
+  fluctuation_rate: 9.99
+  offered_price: 1
+  bid_price: 1
+  accumulated_trade_quantity: 1
+  accumulated_trade_price: 1
+  start_price: 1
+  high_price: 1
+  low_price: 1
+  contrast_yesterday_symbol: 1
+  contrast_yesterday_symbol: 1
+  yesterday_contrast_trade_quantity: 1
+  trade_amount_variation: 9.99
+  yesterday_contrast_trade_rate: 9.99
+  trade_turnover_ratio: 9.99
+  trade_cost: 1
+  total_market_price: 1
+  upper_price_limit_time: MyString
+  lower_price_limit_time: MyString

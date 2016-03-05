@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Condition Names</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>조건검색명</th>
+      <th>인덱스번호</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @condition_names.each do |condition_name| %>
+      <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= condition_name.condition_name %></td>
+        <td><%= condition_name.nIndex %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

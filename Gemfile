@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
@@ -59,3 +59,13 @@ gem 'kaminari'
 #bootstrap도 넣자 미관을 위해
 #gem 'bootstrap-sass-rails'
 gem 'bootstrap-sass'
+
+#여러데이터를 업데이트하기 위해 --이거쓸수없게 되었다. 나의경우에 맞지 않음
+#gem 'activerecord-import'
+
+
+#DB 테이블에 코멘트를 남기기위해
+gem 'migration_comments'
+
+#시간을 비교하기 위한 잼
+gem 'time_difference'

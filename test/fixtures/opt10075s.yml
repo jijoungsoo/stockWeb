@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contract_time: 2016-03-04 17:40:39
+  order_number: MyString
+  manager_number: MyString
+  stock_code: MyString
+  business_gubun: MyString
+  order_status: MyString
+  stock_name: MyString
+  order_quantity: 1
+  order_price: 1
+  not_contract_quantity: 1
+  contract_total_amount: 1
+  last_order_number: MyString
+  order_gubun: MyString
+  trade_gubun: MyString
+  contract_number: MyString
+  contract_price: 1
+  contract_quantity: 1
+  current_price: 1
+  offered_price: 1
+  bid_price: 1
+  contract_price_unit: 1
+  contract_price_quantity: 1
+  today_commission: 1
+  today_tax: 1
+  domestic_investor: MyString
+
+two:
+  contract_time: 2016-03-04 17:40:39
+  order_number: MyString
+  manager_number: MyString
+  stock_code: MyString
+  business_gubun: MyString
+  order_status: MyString
+  stock_name: MyString
+  order_quantity: 1
+  order_price: 1
+  not_contract_quantity: 1
+  contract_total_amount: 1
+  last_order_number: MyString
+  order_gubun: MyString
+  trade_gubun: MyString
+  contract_number: MyString
+  contract_price: 1
+  contract_quantity: 1
+  current_price: 1
+  offered_price: 1
+  bid_price: 1
+  contract_price_unit: 1
+  contract_price_quantity: 1
+  today_commission: 1
+  today_tax: 1
+  domestic_investor: MyString

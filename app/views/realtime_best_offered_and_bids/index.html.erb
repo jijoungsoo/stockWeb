@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>주식우선호가</h1>
+(Listing Realtime Best Offered And Bids)
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>일자</th>
+      <th>종목코드</th>
+      <th>(최우선)매도호가</th>
+      <th>(최우선)매수호가</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @realtime_best_offered_and_bids.each do |realtime_best_offered_and_bid| %>
+      <tr class="<%= cycle('active', 'warning') %>">
+        <td><%= realtime_best_offered_and_bid.stock_date %></td>
+        <td><%= realtime_best_offered_and_bid.stock_code %></td>
+        <td><%= realtime_best_offered_and_bid.offered_price %></td>
+        <td><%= realtime_best_offered_and_bid.bid_price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

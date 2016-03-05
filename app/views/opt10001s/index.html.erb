@@ -1,0 +1,189 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opt10001s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stock date</th>
+      <th>Stock code</th>
+      <th>Stock name</th>
+      <th>Settling account month</th>
+      <th>Face value</th>
+      <th>Capital</th>
+      <th>Stock count</th>
+      <th>Credit rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Year high price</th>
+      <th>Year low price</th>
+      <th>Total market price</th>
+      <th>Total market price rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Foreigner exhaustion rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Substitute price</th>
+      <th>Per</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Eps</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Roe</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Pbr</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Ev</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Bps</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Sales</th>
+      <th>Business profits</th>
+      <th>D250 high price</th>
+      <th>D250 low price</th>
+      <th>Start price</th>
+      <th>High price</th>
+      <th>Low price</th>
+      <th>Upper price limit</th>
+      <th>Lower price limit</th>
+      <th>Expectation contract price</th>
+      <th></th>
+      <th>Expectation contract quantity</th>
+      <th>D250 high date</th>
+      <th>D250 high rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>D250 low date</th>
+      <th>D250 low rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Current price</th>
+      <th>Contrast symbol</th>
+      <th>Contrast yesterday</th>
+      <th>Fluctuation rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Trade quantity</th>
+      <th>Trade contrast</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Face value unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10001s.each do |opt10001| %>
+      <tr>
+        <td><%= opt10001.stock_date %></td>
+        <td><%= opt10001.stock_code %></td>
+        <td><%= opt10001.stock_name %></td>
+        <td><%= opt10001.settling_account_month %></td>
+        <td><%= opt10001.face_value %></td>
+        <td><%= opt10001.capital %></td>
+        <td><%= opt10001.stock_count %></td>
+        <td><%= opt10001.credit_rate %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.year_high_price %></td>
+        <td><%= opt10001.year_low_price %></td>
+        <td><%= opt10001.total_market_price %></td>
+        <td><%= opt10001.total_market_price_rate %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.foreigner_exhaustion_rate %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.substitute_price %></td>
+        <td><%= opt10001.per %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.eps %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.roe %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.pbr %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.ev %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.bps %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.sales %></td>
+        <td><%= opt10001.business_profits %></td>
+        <td><%= opt10001.d250_high_price %></td>
+        <td><%= opt10001.d250_low_price %></td>
+        <td><%= opt10001.start_price %></td>
+        <td><%= opt10001.high_price %></td>
+        <td><%= opt10001.low_price %></td>
+        <td><%= opt10001.upper_price_limit %></td>
+        <td><%= opt10001.lower_price_limit %></td>
+        <td><%= opt10001.expectation_contract_price %></td>
+        <td><%= opt10001. %></td>
+        <td><%= opt10001.expectation_contract_quantity %></td>
+        <td><%= opt10001.d250_high_date %></td>
+        <td><%= opt10001.d250_high_rate %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.d250_low_date %></td>
+        <td><%= opt10001.d250_low_rate %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.current_price %></td>
+        <td><%= opt10001.contrast_symbol %></td>
+        <td><%= opt10001.contrast_yesterday %></td>
+        <td><%= opt10001.fluctuation_rate %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.trade_quantity %></td>
+        <td><%= opt10001.trade_contrast %></td>
+        <td><%= opt10001., %></td>
+        <td><%= opt10001.precision %></td>
+        <td><%= opt10001.scale %></td>
+        <td><%= opt10001.face_value_unit %></td>
+        <td><%= link_to 'Show', opt10001 %></td>
+        <td><%= link_to 'Edit', edit_opt10001_path(opt10001) %></td>
+        <td><%= link_to 'Destroy', opt10001, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opt10001', new_opt10001_path %>

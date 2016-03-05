@@ -1,0 +1,75 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_of_purchase: MyString
+  : 2016-02-28 13:02:27
+  account_number: MyString
+  stock_code: MyString
+  stock_name: MyString
+  purchase_price: MyString
+  : 1
+  total_amount_of_purchase: 1
+  possession_quantity: 1
+  today_sell_profit_and_loss: 1
+  today_commission: 1
+  today_tax: 1
+  credit_gubun: MyString
+  loan_date: MyString
+  payment_balance: 1
+  sellable_quantity: 1
+  credit_amount: 1
+  credit_interest: 1
+  expiration_date: MyString
+  valuation_profit_and_loss: 1
+  earnings_rate: 9.99
+  ,: MyString
+  precision: 
+  scale: 
+  evaluated_price: 1
+  commission: 1
+  selling_commission: 1
+  buying_commission: 1
+  selling_tax: 1
+  will_profit_price: 1
+  not_commission_profit_and_loss: 1
+  not_commission_profit_and_loss_rate: 9.99
+  ,: MyString
+  precision: 
+  scale: 
+
+two:
+  date_of_purchase: MyString
+  : 2016-02-28 13:02:27
+  account_number: MyString
+  stock_code: MyString
+  stock_name: MyString
+  purchase_price: MyString
+  : 1
+  total_amount_of_purchase: 1
+  possession_quantity: 1
+  today_sell_profit_and_loss: 1
+  today_commission: 1
+  today_tax: 1
+  credit_gubun: MyString
+  loan_date: MyString
+  payment_balance: 1
+  sellable_quantity: 1
+  credit_amount: 1
+  credit_interest: 1
+  expiration_date: MyString
+  valuation_profit_and_loss: 1
+  earnings_rate: 9.99
+  ,: MyString
+  precision: 
+  scale: 
+  evaluated_price: 1
+  commission: 1
+  selling_commission: 1
+  buying_commission: 1
+  selling_tax: 1
+  will_profit_price: 1
+  not_commission_profit_and_loss: 1
+  not_commission_profit_and_loss_rate: 9.99
+  ,: MyString
+  precision: 
+  scale: 

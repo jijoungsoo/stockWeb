@@ -3,8 +3,26 @@
         <li><%=link_to '종목보기',stocks_path, :target=>"main" %></li>
         <li><%=link_to '계좌 금액확인',account_balance_path, :target=>"main" %></li>
         <li><%=link_to '테마그룹',themes_path , :target=>"main" %></li>
-        <li><%=link_to '일일종목데이터',opt10081s_path, :target=>"main" %></li>
+        <li><%=link_to '일일종목데이터(OPT10081)',opt10081s_path, :target=>"main" %></li>
         <li><%=link_to '회원사코드',branch_code_names_path, :target=>"main" %></li>
-
+        <li><%=link_to '컬럼 도메인',domains_path, :target=>"main" %></li>
+        <li><%=link_to "공매도추이요청<br />(OPT10014)".html_safe, opt10014s_path, :target=>"main" %></li>
+        <li><%=link_to "일별거래상세요청<br />(OPT10015)".html_safe, opt10015s_path, :target=>"main" %></li>
+        <li><%=link_to "종목투자자기관별_매수_금액<br />(OPT10059_one_one)".html_safe, opt10059_one_ones_path, :target=>"main" %></li>
+        <li><%=link_to "종목투자자기관별_매수_수량<br />(OPT10059_one_two)".html_safe, opt10059_one_twos_path, :target=>"main" %></li>
+        <li><%=link_to "종목투자자기관별_매도_금액<br />(OPT10059_two_one)".html_safe, opt10059_two_ones_path, :target=>"main" %></li>
+        <li><%=link_to "종목투자자기관별_매도_수량<br />(OPT10059_two_two)".html_safe, opt10059_two_twos_path, :target=>"main" %></li>
+        <li><%=link_to "종목투자자기관별<br />(OPT10059)".html_safe, opt10059s_path, :target=>"main" %></li>
+        <li><%=link_to "실시간미체결요청<br />(OPT10075)".html_safe, opt10075s_path, :target=>"main" %></li>
+        <li><%=link_to "1분봉<br />(OPT10081)".html_safe, opt10081s_path, :target=>"main" %></li>
+        <li><%=link_to "계좌수익률요청<br />(OPT10085)".html_safe, opt10085s_path, :target=>"main" %></li>
+        <li><%=link_to "추정자산조회요청<br />(OPW00003)".html_safe, opw00003s_path, :target=>"main" %></li>
+        <li><%=link_to "실시간체결<br />(realtime_contract)".html_safe, realtime_contracts_path, :target=>"main" %></li>
+        <li><%=link_to "실시간시세<br />(realtime_price)".html_safe, realtime_prices_path, :target=>"main" %></li>
+        <li><%=link_to "주식우선호가<br />(realtime_best_offered_and_bid)".html_safe, realtime_best_offered_and_bids_path, :target=>"main" %></li>
+        <li><%=link_to "주식호가잔량<br />(realtime_offered_and_bid)".html_safe, realtime_offered_and_bids_path, :target=>"main" %></li>
+        <li><%=link_to "주문접수<br />(order)".html_safe, orders_path, :target=>"main" %></li>
+        <li><%=link_to "주문체결<br />(ordered)".html_safe, ordereds_path, :target=>"main" %></li>
+        <li><%=link_to "잔고<br />(balance)".html_safe, balances_path, :target=>"main" %></li>
+        <li><%=link_to "조건검색리스트<br />(condition_name)".html_safe, condition_names_path, :target=>"main" %></li>
 </ol>
-

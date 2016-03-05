@@ -12,16 +12,16 @@ class CreateQpw00004s < ActiveRecord::Migration
       t.integer :estimation_deposit     #추정예탁자산
       t.integer :stock_collacteral_loan #매도담보대출금
       t.integer :today_investment_money #당일투자원금
-      t.integer :this_month_investment_money  #당일투자원금
+      t.integer :this_month_investment_money  #당월투자원금
       t.integer :accumulative_investment_money #누적투자원금
       t.integer :today_profit_and_loss #당일투자손익
       t.integer :this_month_profit_and_loss #당월투자손익
-      t.integer :accumulative_profit_and_loss #당월투자손익
+      t.integer :accumulative_profit_and_loss #누적투자손익
       t.integer :today_profit_and_loss_rate #당일손익율
       t.integer :this_month_profit_and_loss_rate #당월손익율
       t.integer :accumulative_profit_and_loss_rate #누적손익율
       t.integer :print_count #출력건수
-     
+
       t.timestamps null: false
     end
   end

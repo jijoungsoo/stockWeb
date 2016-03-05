@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_code: MyString
+  current_price: 1
+  trade_quantity: 1
+  contract_time: 2016-03-01 15:48:21
+  start_price: 1
+  high_price: 1
+  low_price: 1
+  modify_stock_gubun: 1
+  modify_rate: 9.99
+  ,: MyString
+  precision: 
+  scale: 
+  big_type_of_business: 1
+  small_type_of_business: 1
+  stock_info: 1
+  modify_stock_event: 1
+  yesterday_current_price: 1
+
+two:
+  stock_code: MyString
+  current_price: 1
+  trade_quantity: 1
+  contract_time: 2016-03-01 15:48:21
+  start_price: 1
+  high_price: 1
+  low_price: 1
+  modify_stock_gubun: 1
+  modify_rate: 9.99
+  ,: MyString
+  precision: 
+  scale: 
+  big_type_of_business: 1
+  small_type_of_business: 1
+  stock_info: 1
+  modify_stock_event: 1
+  yesterday_current_price: 1

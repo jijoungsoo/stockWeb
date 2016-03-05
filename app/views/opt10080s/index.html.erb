@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opt10080s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stock code</th>
+      <th>Current price</th>
+      <th>Trade quantity</th>
+      <th>Contract time</th>
+      <th>Start price</th>
+      <th>High price</th>
+      <th>Low price</th>
+      <th>Modify stock gubun</th>
+      <th>Modify rate</th>
+      <th>,</th>
+      <th>Precision</th>
+      <th>Scale</th>
+      <th>Big type of business</th>
+      <th>Small type of business</th>
+      <th>Stock info</th>
+      <th>Modify stock event</th>
+      <th>Yesterday current price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opt10080s.each do |opt10080| %>
+      <tr>
+        <td><%= opt10080.stock_code %></td>
+        <td><%= opt10080.current_price %></td>
+        <td><%= opt10080.trade_quantity %></td>
+        <td><%= opt10080.contract_time %></td>
+        <td><%= opt10080.start_price %></td>
+        <td><%= opt10080.high_price %></td>
+        <td><%= opt10080.low_price %></td>
+        <td><%= opt10080.modify_stock_gubun %></td>
+        <td><%= opt10080.modify_rate %></td>
+        <td><%= opt10080., %></td>
+        <td><%= opt10080.precision %></td>
+        <td><%= opt10080.scale %></td>
+        <td><%= opt10080.big_type_of_business %></td>
+        <td><%= opt10080.small_type_of_business %></td>
+        <td><%= opt10080.stock_info %></td>
+        <td><%= opt10080.modify_stock_event %></td>
+        <td><%= opt10080.yesterday_current_price %></td>
+        <td><%= link_to 'Show', opt10080 %></td>
+        <td><%= link_to 'Edit', edit_opt10080_path(opt10080) %></td>
+        <td><%= link_to 'Destroy', opt10080, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opt10080', new_opt10080_path %>
